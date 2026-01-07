@@ -8,6 +8,7 @@ const aj = arcjet({
       mode: 'LIVE',
       allow: [
         'CATEGORY:SEARCH_ENGINE', // Google, Bing, etc
+        'CATEGORY:APPLICATION', // Postman, curl, etc
         'CATEGORY:PREVIEW', // Link previews e.g. Slack, Discord
       ],
     }),
