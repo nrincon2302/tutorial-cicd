@@ -1,5 +1,10 @@
 import logger from '#config/logger';
-import { getAllUsers, getUserById, updateUser, deleteUser } from '#services/users.service';
+import {
+  getAllUsers,
+  getUserById,
+  updateUser,
+  deleteUser,
+} from '#services/users.service';
 import { userIdSchema, updateUserSchema } from '#validations/users.validation';
 import { formatValidationError } from '#utils/format';
 
@@ -14,7 +19,6 @@ export const fetchAllUsers = async (req, res, next) => {
       users: allUsers,
       count: allUsers.length,
     });
-        
   } catch (e) {
     logger.error(e);
     next(e);
@@ -43,7 +47,6 @@ export const fetchUserById = async (req, res, next) => {
       message: 'User retrieved successfully',
       user,
     });
-        
   } catch (e) {
     logger.error(e);
     next(e);
@@ -113,7 +116,6 @@ export const updateUserById = async (req, res, next) => {
       message: 'User updated successfully',
       user: updatedUser,
     });
-        
   } catch (e) {
     logger.error(`Error updating user: ${e.message}`);
 
@@ -175,7 +177,7 @@ export const deleteUserById = async (req, res, next) => {
       message: 'User deleted successfully',
       user: deletedUser,
     });
-  } catch(e) {
+  } catch (e) {
     logger.error(`Error deleting user: ${e.message}`);
 
     if (e.message === 'User not found') {
