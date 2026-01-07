@@ -12,7 +12,8 @@
     "#routes/*": "./src/routes/*.js",
     "#services/*": "./src/services/*.js",
     "#utils/*": "./src/utils/*.js",
-    "#validations/*": "./src/validations/*.js"
+    "#validations/*": "./src/validations/*.js",
+    "#src/*": "./src/*"
   },
   "scripts": {
     "dev": "node --watch src/index.js",
@@ -23,7 +24,8 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
-    "dev:docker": "sh ./scripts/dev.sh"
+    "dev:docker": "sh ./scripts/dev.sh",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "repository": {
     "type": "git",
@@ -54,10 +56,13 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
+    "cross-env": "^10.1.0",
     "drizzle-kit": "^0.31.8",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
-    "prettier": "^3.7.4"
+    "jest": "^30.2.0",
+    "prettier": "^3.7.4",
+    "supertest": "^7.2.2"
   }
 }
